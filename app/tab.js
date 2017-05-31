@@ -12,7 +12,10 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Home',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+		title: '主页',
+	  // header:null,
+	  headerBackTitle: null,
+	  headerRight: true
     // tabBarIcon: ({ tintColor }) => (
     //   <Image
 
@@ -37,7 +40,39 @@ class MyHomeScreen extends React.Component {
 
 class MyNotificationsScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'Notifications',
+    tabBarLabel: 'list',
+
+  };
+
+  render() {
+    return (
+      <Button
+        onPress={() => this.props.navigation.goBack()}
+        title="Go back home"
+      />
+    );
+  }
+}
+
+class MyNotificationsScreen1 extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'news',
+
+  };
+
+  render() {
+    return (
+      <Button
+        onPress={() => this.props.navigation.goBack()}
+        title="Go back home"
+      />
+    );
+  }
+}
+
+class MyNotificationsScreen2 extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'Me',
 
   };
 
@@ -67,19 +102,18 @@ const MyApp = TabNavigator({
   Notifications: {
     screen: MyNotificationsScreen,
   },
+  Notifications1: {
+    screen: MyNotificationsScreen1,
+  },
+  Notifications2: {
+    screen: MyNotificationsScreen2,
+  },
 }, {
   tabBarOptions: {
     activeTintColor: '#e91e63',
   },
 });
 
-MyHomeScreen.navigationOptions = {
-  title: 'My Chats',
-  headerBackTitle: null,
-  headerRight: true
-};
-MyNotificationsScreen.navigationOptions = {
-  title: 'My Chats2',
-};
+
 
 export default MyApp;
