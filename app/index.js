@@ -34,10 +34,10 @@ class ChatScreen extends React.Component{
 		headerBackTitle: null,
 	});
 	render() {
-		const { params } = this.props.navigation.state;
+		// const { params } = this.props.navigation.state;
 		return (
 			<View>
-				<Text>Chat with {params.user}</Text>
+				<Text>Chat with saasdas</Text>
 			</View>
 		);
 	}

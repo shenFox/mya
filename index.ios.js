@@ -12,6 +12,6 @@ import {
   View
 } from 'react-native';
 
-import App from './app/index.js'
+import FlatListDemo from './app/list.js'
 
-AppRegistry.registerComponent('mya', () => App);
+AppRegistry.registerComponent('mya', () => FlatListDemo);

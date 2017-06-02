@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
+import Slider from './slider.js';
+import FlatListDemo from './list.js';
 
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
@@ -28,11 +30,14 @@ class MyHomeScreen extends React.Component {
   	const { navigate } = this.props.navigation;
     return (
 		<View>
+			<Slider></Slider>
 			<Text>Hello, Navigation!</Text>
 			<Button
 				onPress={() => navigate('Chat', { user: 'Lucy'})}
 				title='Chat with Lucy'
 			/>
+			<FlatListDemo></FlatListDemo>
+
 		</View>
     )
   }
